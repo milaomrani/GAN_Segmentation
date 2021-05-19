@@ -17,3 +17,22 @@ DATASET_FILENAME = os.path.basename(DATA_URL)
 #Destination directory
 DEST_PATH = os.path.join(DATA_FOLDER, "DF")
 ##########################################################
+
+parser = argparse.ArgumentParser(description="Dataset folder")
+parser.add_argument('-d', '--debug', default=False, action="store_true", help='Print debug spew')
+args = parser.parse_args()
+
+#Logging init
+logging.getLogger(args.debug)
+
+#Create a datafolder if it does not exist yet!
+if not os.path.exists(DATA_FOLDER):
+    try:
+        os.mkdir(DATA_FOLDER)
+    except OSError:
+        logging.info("Creating the directory is %s failed")
+    else:
+        logging.debug("Successfully created the directroy: %s", DATA_FOLDER)
+
+
+
