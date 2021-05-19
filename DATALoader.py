@@ -4,7 +4,7 @@ import argparse, os, sys, shutil, urllib.request, logging
 from tqdm import tqdm
 import zipfile
 
-DATA_URL = ""
+DATA_URL = "coffeebreakai.com"
 
 #Folder where to store all data
 DATA_FOLDER = "TRainingImages"
@@ -43,5 +43,28 @@ class downloadProgressBar(tqdm):
         self.update(b * bsize - self.n)
 
 
+def downloadURL(url, output_path):
+    with downloadProgressBar(unit='B', unit_scale=True, miniters=1, desc=url.split('/')[-1]) as t:
+        urllib.request.urlretrieve(url, filename=output_path, reporthook=t.update_to())
+
+
+#download and extract
+if not os.path.exists(SOURCE_PATH):
+    #Fetch the data
+    if not os.path.exists(SOURCE_PATH + '.zip'):
+        downloadURL(DATA_URL, os.path.join(DATA_FOLDER, DATASET_FILENAME))
+
+    #Extract
+    logging.info("Extracting: %s", os.path.join(DATA_FOLDER, DATASET_FILENAME))
+
+    try:
+        with zipfile.ZipFile(os.path.join(DATA_FOLDER, DATASET_FILENAME), 'r') as zipObj:
+            # Extract all the contens
+            zipObj.extractall(DATA_FOLDER)
+
+    except zipfile.BadZipFile:
+        #redownload
+        downloadURL(DATA_URL, os.path.join(DATA_FOLDER, DATASET_FILENAME))
+        zipObj.extractall(DATA_FOLDER)
 
 
