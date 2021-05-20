@@ -66,5 +66,3 @@ if not os.path.exists(SOURCE_PATH):
         #redownload
         downloadURL(DATA_URL, os.path.join(DATA_FOLDER, DATASET_FILENAME))
         zipObj.extractall(DATA_FOLDER)
-
-
