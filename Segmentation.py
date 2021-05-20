@@ -14,12 +14,12 @@ import random
 
 use_cuda = torch.cuda.is_available()
 
-parser = argparse.ArgumentParser(description='PyTorch Unsupervised Segmentation')
+parser = argparse.ArgumentParser(description='Unsupervised Segmentation')
 parser.add_argument('--scribble', action='store_true', default=False, 
                     help='use scribbles')
 parser.add_argument('--nChannel', metavar='N', default=10, type=int,
                     help='number of channels')
-parser.add_argument('--maxIter', metavar='T', default=20, type=int,
+parser.add_argument('--maxIter', metavar='T', default=25, type=int,
                     help='number of maximum iterations')
 parser.add_argument('--minLabels', metavar='minL', default=3, type=int, 
                     help='minimum number of labels')
