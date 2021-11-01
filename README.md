@@ -6,7 +6,7 @@ Step 1: Generative Adversarial Networks will be added soon.
 
 **Step 2: Test sample images Datasets**
 
-python segmentation.py --input ./TRainingImages/1.jpg --maxIter 25
+python segmentation.py --imgDIR ./TRainingImages/1.jpg --Train 25
 
 optional arguments:
 --`maxIter`             number of epochs [default value is 25]
