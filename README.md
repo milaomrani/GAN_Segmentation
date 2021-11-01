@@ -9,5 +9,5 @@ Step 1: Generative Adversarial Networks will be added soon.
 python segmentation.py --imgDIR ./TRainingImages/1.jpg --Train 25
 
 optional arguments:
---`maxIter`             number of epochs [default value is 25]
+--`train`             number of epochs [default value is 25]
 
