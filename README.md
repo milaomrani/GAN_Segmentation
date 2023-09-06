@@ -1,13 +1,31 @@
-This repository includes the scripts to train segmentation for document images Challenge. 
-In this regard, I build a multi-label model which is capable of identifying and segmenting document images such as character, page, and ornament.
-A PyTorch implementation of paper based on icpr 2021 paper segmentation of a Generative Adversarial Network.
+Certainly, I can help you make your GitHub repository's README more professional. Here's an improved version:
 
-Step 1: Generative Adversarial Networks will be added soon.
+# Document Image Segmentation Challenge
 
-**Step 2: Test sample images Datasets**
+This repository contains scripts for training a multi-label segmentation model designed to identify and segment various elements within document images, such as characters, pages, and ornaments. The implementation is based on the paper from ICPR 2021, titled "Segmentation of Generative Adversarial Network."
 
-python segmentation.py --imgDIR ./TRainingImages/1.jpg --Train 25
+## Getting Started
 
-optional arguments:
---`train`             number of epochs [default value is 25]
+### Step 1: Generative Adversarial Networks (GANs)
 
+The GAN implementation will be added to this repository soon.
+
+### Step 2: Testing with Sample Images
+
+To test the segmentation model with sample images, follow these steps:
+
+1. Ensure you have the required datasets ready.
+
+2. Run the following command:
+
+```bash
+python segmentation.py --imgDIR ./TrainingImages/1.jpg --Train 25
+```
+
+#### Optional Arguments
+
+- `--train`: Specify the number of training epochs (default value is 25).
+
+## Contributors
+
+- [Milad Omrani]
