@@ -1,5 +1,3 @@
-Certainly, I can help you make your GitHub repository's README more professional. Here's an improved version:
-
 # Document Image Segmentation Challenge
 
 This repository contains scripts for training a multi-label segmentation model designed to identify and segment various elements within document images, such as characters, pages, and ornaments. The implementation is based on the paper from ICPR 2021, titled "Segmentation of Generative Adversarial Network."
